@@ -1,0 +1,18 @@
+{
+    "personal": {
+        "name": "Ritwam Mukhopadhyay",
+        "degree": "Pharm D"
+    },
+    "preferences": {
+        "study_time": "Night",
+        "favorite_fruit": "mango",
+        "reading_habits": "read manga"
+    },
+    "academic": {
+        "cat_exam_date": ""
+    },
+    "goals": {},
+    "personal | preferences | academic | goals": {
+        "study_time_preference": ""
+    }
+}

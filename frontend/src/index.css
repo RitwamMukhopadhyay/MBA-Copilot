@@ -1,0 +1,800 @@
+:root {
+  /* Default Colors (Dark Mode) */
+  --bg-primary: #030712;
+  --bg-secondary: #0b0f19;
+  --bg-tertiary: #030712;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --font-size-base: 16px;
+
+  --text: var(--text-secondary);
+  --text-h: var(--text-primary);
+  --bg: var(--bg-primary);
+  --border: var(--border-color);
+  --code-bg: #1f2028;
+  --accent: #3b82f6;
+  --accent-bg: rgba(59, 130, 246, 0.15);
+  --accent-border: rgba(59, 130, 246, 0.5);
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: var(--font-size-base)/145% var(--sans);
+  letter-spacing: 0.18px;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light Theme Class Override */
+:root.theme-light {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: rgba(0, 0, 0, 0.1);
+  
+  --text: var(--text-secondary);
+  --text-h: var(--text-primary);
+  --bg: var(--bg-primary);
+  --border: var(--border-color);
+  --shadow: rgba(0, 0, 0, 0.05) 0 10px 15px -3px, rgba(0, 0, 0, 0.02) 0 4px 6px -2px;
+}
+
+/* Dark Theme Class Override */
+:root.theme-dark {
+  --bg-primary: #030712;
+  --bg-secondary: #0b0f19;
+  --bg-tertiary: #030712;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Set HTML root font size using base variable */
+html {
+  font-size: var(--font-size-base) !important;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  font-weight: 600;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 18px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* ==================================================
+   SAAS UI DESIGN SYSTEM UTILITIES
+   ================================================== */
+
+.saas-container {
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-primary);
+  overflow-y: auto;
+}
+
+.saas-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.saas-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.saas-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.saas-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.saas-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.45) 0%, rgba(15, 23, 42, 0.6) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 24px 30px;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.saas-button {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  outline: none;
+}
+
+.saas-button-primary {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+}
+.saas-button-primary:hover {
+  background: linear-gradient(135deg, #b96bfa 0%, #8b5cf6 100%);
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.35);
+}
+
+.saas-button-secondary {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.saas-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.saas-button-danger {
+  background: #ef4444;
+}
+.saas-button-danger:hover {
+  background: #f87171;
+}
+
+.saas-button-success {
+  background: #10b981;
+}
+.saas-button-success:hover {
+  background: #34d399;
+}
+
+/* Forms & Validation Styling */
+.saas-input {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.saas-input:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.25);
+}
+
+.saas-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Premium Table Styling */
+.saas-table-container {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.saas-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-primary);
+  text-align: left;
+}
+.saas-table th {
+  padding: 14px 18px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: rgba(15, 23, 42, 0.85);
+}
+.saas-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+.saas-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+/* Custom Toggle CSS (knob transitions) */
+.saas-toggle-btn {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.saas-toggle-knob {
+  position: absolute;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: left 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Chat & Messaging Layouts */
+.saas-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px;
+}
+
+.saas-chat-bubble {
+  max-width: 75%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.saas-chat-bubble-user {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  color: #ffffff;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+.saas-chat-bubble-agent {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.55) 0%, rgba(15, 23, 42, 0.7) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+.saas-chat-bubble-error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+/* Stat Cards Dashboard Grid */
+.saas-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.saas-stat-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.3) 0%, rgba(15, 23, 42, 0.45) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.saas-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.saas-stat-emoji {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.saas-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.saas-stat-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+/* Collapsible Accordion Patterns */
+.saas-accordion-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.4) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+.saas-accordion-header:hover {
+  background: linear-gradient(90deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.55) 100%);
+  border-color: rgba(168, 85, 247, 0.35);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.saas-accordion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 12px;
+  margin-bottom: 16px;
+  animation: saasFadeIn 0.25s ease;
+}
+
+@keyframes saasFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================================================
+   CHAT & PDF CHAT LAYOUT IMPROVEMENTS
+   ================================================== */
+
+.saas-chat-container {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+  padding: 30px 40px;
+}
+
+.saas-chat-wrapper {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-height: 0;
+}
+
+.saas-conversation-area {
+  width: 100%;
+  max-width: 80%; /* 70-80% of available width */
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+/* Override input select for dropdown menu fixes */
+select.saas-select {
+  background-color: #1e293b;
+  color: #ffffff;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 35px;
+}
+
+select.saas-select:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.35);
+}
+
+select.saas-select option {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 12px;
+}
+
+select.saas-select option:hover,
+select.saas-select option:focus,
+select.saas-select option:active {
+  background-color: #2d3748 !important;
+  color: #ffffff !important;
+}
+
+select.saas-select option:checked {
+  background-color: #7c3aed !important;
+  color: #ffffff !important;
+}
+
+/* ==================================================
+   RESPONSIVE DESIGN SYSTEM OVERRIDES (MOBILE & TABLET)
+   ================================================== */
+
+/* Mobile top header, visible only on screens smaller than 768px */
+.mobile-header {
+  display: none;
+}
+
+/* Sidebar overlay backdrop for mobile navigation drawer */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  animation: fadeInOverlay 0.2s ease;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Base tablet portrait media query */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobile-header-title {
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+  }
+
+  .hamburger-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+  }
+
+  /* Sidebar absolute slide-out navigation drawer overrides */
+  .saas-sidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    height: 100vh !important;
+    z-index: 10000 !important;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.5) !important;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+    width: 240px !important;
+  }
+
+  .saas-sidebar.closed {
+    transform: translateX(-100%) !important;
+  }
+
+  .saas-sidebar.open {
+    transform: translateX(0) !important;
+  }
+
+  /* Container & card padding scaling */
+  .saas-container,
+  .settings-container,
+  .dashboard-container {
+    padding: 20px 16px !important;
+  }
+
+  .saas-card,
+  .settings-card {
+    padding: 16px 20px !important;
+    gap: 12px !important;
+  }
+
+  /* Typography responsive scaling */
+  .saas-title, h1 {
+    font-size: 1.8rem !important;
+    letter-spacing: -0.02em !important;
+    margin: 16px 0 8px 0 !important;
+  }
+
+  .saas-subtitle, p {
+    font-size: 0.9rem !important;
+  }
+
+  /* Dashboard grids stack overrides */
+  .dashboard-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .dashboard-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .dashboard-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .dashboard-focus-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Subjects page stacking overrides */
+  .subject-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Attendance stats and layout stack overrides */
+  .attendance-card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .attendance-stats-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  /* Settings controls and grids overrides */
+  .settings-stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* PDF selection layouts stack overrides */
+  .pdf-selectors-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .pdf-selectors-row select,
+  .pdf-selectors-row button {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+/* Mobile viewport layout optimizations (X-axis overflow guards) */
+@media (max-width: 480px) {
+  /* Scale margins, gap, and titles further on mobile */
+  .saas-container,
+  .settings-container,
+  .dashboard-container {
+    padding: 16px 12px !important;
+  }
+
+  .saas-card,
+  .settings-card {
+    padding: 12px 16px !important;
+  }
+
+  /* Forces stats cards to wrap vertically (single column cards) */
+  .dashboard-stats-grid,
+  .attendance-stats-grid,
+  .saas-stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Form action buttons scale to 100% width and stack vertically */
+  .subject-form-buttons,
+  .assignment-form-buttons,
+  .chat-input-form,
+  .settings-form-buttons {
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .subject-form-buttons button,
+  .assignment-form-buttons button,
+  .chat-input-form button,
+  .settings-form-buttons button {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Attendance marking rows button spacing stack */
+  .attendance-subject-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    padding: 10px 12px !important;
+  }
+
+  .subject-action-container {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  .subject-action-container button {
+    flex: 1 !important;
+    padding: 8px 6px !important;
+    font-size: 11px !important;
+    justify-content: center !important;
+  }
+
+  /* Assignment items stack adjustments */
+  .assignments-list-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Ensure smooth horizontal scrollbar in tables and no overflow */
+  .saas-table-container,
+  .pdf-markdown-container table {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Segmented control stack */
+  .settings-segmented-control {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .settings-segmented-control button {
+    flex: 1 !important;
+    padding: 8px 10px !important;
+    font-size: 0.8rem !important;
+    text-align: center !important;
+  }
+}
+
+
+
